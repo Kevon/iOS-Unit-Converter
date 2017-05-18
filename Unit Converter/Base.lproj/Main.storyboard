@@ -1,25 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In ℉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9MC-Et-PQF">
+                                <rect key="frame" x="215" y="179" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click &quot;Update&quot; for the Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZs-3v-gE1">
+                                <rect key="frame" x="46" y="424" width="229" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUB-zK-utE">
+                                <rect key="frame" x="135" y="352" width="51" height="30"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fKV-rX-sWc"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k5x-u3-0YO">
+                                <rect key="frame" x="38" y="270" width="245" height="29"/>
+                                <segments>
+                                    <segment title="To Celcius"/>
+                                    <segment title="To Kelvin"/>
+                                    <segment title="To Rankine"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Degrees" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lVy-jH-k3F">
+                                <rect key="frame" x="122" y="175" width="76" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="Input:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="n0T-a2-Xzz"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k5x-u3-0YO" firstAttribute="top" secondItem="9MC-Et-PQF" secondAttribute="bottom" constant="70" id="2OD-xX-mmx"/>
+                            <constraint firstItem="kUB-zK-utE" firstAttribute="top" secondItem="k5x-u3-0YO" secondAttribute="bottom" constant="54" id="3qr-1l-CHd"/>
+                            <constraint firstItem="9MC-Et-PQF" firstAttribute="leading" secondItem="lVy-jH-k3F" secondAttribute="trailing" constant="17" id="6l7-gJ-OtO"/>
+                            <constraint firstItem="kUB-zK-utE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7WN-gS-Ril"/>
+                            <constraint firstItem="k5x-u3-0YO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jld-AY-gCQ"/>
+                            <constraint firstItem="SZs-3v-gE1" firstAttribute="top" secondItem="kUB-zK-utE" secondAttribute="bottom" constant="42" id="UZP-eL-z04"/>
+                            <constraint firstItem="k5x-u3-0YO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VX8-3x-Pyo"/>
+                            <constraint firstItem="SZs-3v-gE1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XWo-Sc-bpz"/>
+                            <constraint firstItem="lVy-jH-k3F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dHk-uq-T1J"/>
+                            <constraint firstItem="k5x-u3-0YO" firstAttribute="top" secondItem="lVy-jH-k3F" secondAttribute="bottom" constant="65" id="fn7-fq-AeB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Input" destination="lVy-jH-k3F" id="MUQ-oS-P7b"/>
+                        <outlet property="Output" destination="SZs-3v-gE1" id="CfW-TW-aMl"/>
+                        <outlet property="Segment" destination="k5x-u3-0YO" id="zYi-XV-udh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="162" y="366"/>
         </scene>
     </scenes>
 </document>
